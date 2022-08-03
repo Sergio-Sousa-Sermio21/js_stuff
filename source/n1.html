@@ -10,6 +10,20 @@
     yes
     <script>
         window.alert('Now this is peak js performance')
+        window.confirm('Is this really?')
+        var name = window.prompt('Name:')
+        window.alert('Greetings ' + name)
+        var n1 = window.prompt('Number 1:')
+        var n2 = window.prompt('Number 2:')
+        var n3 = n1 + n2
+        window.alert('Concatenation: ' + n3)
+        //type conversion
+        var n4 = Number.parseInt(n1) + Number.parseInt(n2) //only with int
+        var n5 = Number(n1) + Number(n2) //int and float
+        window.alert('Sum: ' + n4)
+        //convert to string again
+        n5.toString()
+        String(n4)
     </script>
 </body>
 </html>

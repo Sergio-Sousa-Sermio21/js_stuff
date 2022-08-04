@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom</title>
+    <style>
+        body {
+            font-family: sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div id="main">
+        <h1>Dom Tree</h1>
+        <picture>
+            <img src="images/dom.png" alt="dom tree">
+        </picture>
+        <p class="t">e</p>
+        <p class="t">bacano</p>
+    </div>
+    <script>
+        var p1 = window.document.getElementsByTagName('p')[0] //will take the first p in the document
+        window.document.write(window.document.URL /* you can write strings or info like the url of the page*/)
+        window.document.write('<br>First:' + p1.innerText)
+        window.alert(p1.innerText)
+        p1.style.color = 'red' //changing the style of the object (first p)
+        // you can change by ids, classes and name using
+        var d = window.document.getElementById('main')
+        var p2 = window.document.getElementsByClassName('t')
+        //another way is using querySelector
+        d = window.document.querySelector('div#main') //works in class (.) too
+        d.style.background = 'red'
+    </script>
+</body>
+</html>

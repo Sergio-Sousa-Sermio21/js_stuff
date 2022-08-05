@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sum</title>
+    <style>
+        body {
+            font-family: sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>Sum values</h1>
+        <input type="number" name="n1" id="n1">
+        <input type="number" name="n2" id="n2">
+        <input type="button" value="Sum" onclick="sumclick()">
+        <div id="result"><p>Result</p></div>
+    </main>
+    <script>
+        function sumclick(){
+            var tn1 = window.document.getElementById('n1')
+            var tn2 = window.document.getElementById('n2')
+            var result = window.document.getElementById('result')
+            var n1 = Number(tn1.value)
+            var n2 = Number(tn2.value)
+            var r = n1 + n2
+            result.innerHTML = `<p> ${n1} + ${n2} = <strong>${r}</strong> </p`
+        }
+    </script>
+</body>
+</html>

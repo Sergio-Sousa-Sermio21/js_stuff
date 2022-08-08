@@ -16,7 +16,7 @@
             margin-bottom: 40px;
         }
         main {
-            padding-top: 50px;
+            padding-top: 25px;
             background-color: white;
             border-radius: 15px;
             width: 700px;
@@ -28,6 +28,12 @@
             font-size: 30px;
             text-align: center;
             color:black;
+        }
+        div#divimg {
+            width: 300px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 0px;
         }
         p {
             text-align: center;
@@ -43,10 +49,8 @@
         <div id="info">
             <p>Take your time...</p>
         </div>
-        <div id="image">
-            <picture>
-
-            </picture>
+        <div id="divimg">
+            <img id="image" src="images/morning.png" alt="Time">
         </div>
     </main>
     <footer>
@@ -59,13 +63,18 @@
         var nh = now.getHours()
         var nm = now.getMinutes()
         h.innerHTML = `<p>Now it's ${nh}:${nm}</p>`
-        
-        if (nh > 20 || nh <= 5)
+        if (nh > 20 || nh <= 5){
             document.body.style.backgroundColor='rgb(54, 74, 90)';
-        else if (nh > 5 && nh <= 12)
-            document.body.style.backgroundColor='rgb(18, 120, 199)';
-        else
+            i.src = 'images/night.png'
+        }
+        else if (nh > 5 && nh <= 12){
+            document.body.style.backgroundColor='rgb(105, 169, 190)';
+            i.src = 'images/morning.png'
+        }
+        else{
             document.body.style.backgroundColor='rgb(152, 121, 59)';
+            i.src = 'images/afternoon.png'
+        }
     </script>
 </body>
 </html>

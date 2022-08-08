@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hour</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        header {
+            color: white;
+            text-align: center;
+            margin-top: 50px;
+            margin-bottom: 40px;
+        }
+        main {
+            padding-top: 50px;
+            background-color: white;
+            border-radius: 15px;
+            width: 700px;
+            height: 450px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        div#info > p {
+            font-size: 30px;
+            text-align: center;
+            color:black;
+        }
+        p {
+            text-align: center;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Hour of the day</h1>
+    </header>
+    <main>
+        <div id="info">
+            <p>Take your time...</p>
+        </div>
+        <div id="image">
+            <picture>
+
+            </picture>
+        </div>
+    </main>
+    <footer>
+        <p>ⒸSermio21</p>
+    </footer>
+    <script>
+        var h = window.document.getElementById('info')
+        var i = window.document.getElementById('image')
+        var now = new Date()
+        var nh = now.getHours()
+        var nm = now.getMinutes()
+        h.innerHTML = `<p>Now it's ${nh}:${nm}</p>`
+        
+        if (nh > 20 || nh <= 5)
+            document.body.style.backgroundColor='rgb(54, 74, 90)';
+        else if (nh > 5 && nh <= 12)
+            document.body.style.backgroundColor='rgb(18, 120, 199)';
+        else
+            document.body.style.backgroundColor='rgb(152, 121, 59)';
+    </script>
+</body>
+</html>

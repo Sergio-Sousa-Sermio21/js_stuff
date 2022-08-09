@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hour</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: rgb(105, 169, 190);
+        }
+        header {
+            color: white;
+            text-align: center;
+            margin-top: 50px;
+            margin-bottom: 40px;
+        }
+        main {
+            padding-top: 25px;
+            padding-left: 25px;
+            background-color: white;
+            border-radius: 15px;
+            width: 700px;
+            height: 450px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        div#info > p {
+            font-size: 30px;
+            text-align: center;
+            color:black;
+        }
+        div#divimg {
+            width: 300px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 0px;
+        }
+        p {
+            text-align: center;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Age and sex Selector</h1>
+    </header>
+    <main>
+        <div id="agebox">
+            Birth year:<input type="number" name="currentage" id="age">
+        </div>
+        <div id="radioselect">
+            Select a sex:
+            <input type="radio" name="radsex" id="male" checked>
+            <label for="male">Male</label>
+            <input type="radio" name="radsex" id="female">
+            <label for="female">Female</label>
+            <input type="button" name="submit" value="Submit" onclick="clic()">
+        </div>
+        <div id="info">
+            <p>...</p>
+        </div>
+        <div id="divimg">
+            <img id="image" src="images/morning.png" alt="Time">
+        </div>
+    </main>
+    <footer>
+        <p>Disclaimer: This file is just for training purposes, I'm not assuming any gender of any person in this colection of images.</p>
+        <p>ⒸSermio21</p>
+    </footer>
+    <script>
+        function clic(){
+            var info = window.document.getElementById('info')
+            var img = window.document.getElementById('image')
+            var date = new Date()
+            var cyear = date.getFullYear()
+            var byear = window.document.getElementById('age')
+            if (Number(byear.value) > 1900 && Number(byear.value) <= cyear || byear.value.length == 0){
+                var fsex = document.getElementsByName('radsex')
+                var age = cyear - Number(byear.value)
+                // window.alert(`${cyear} - ${byear.value} = ${age}`)
+                var sex;
+                if (fsex[0].checked) //Need to find a way to put less conditions
+                    sex = 'male'
+                else
+                    sex = 'female'
+                var typeage;
+                if (age < 12)
+                    typeage = 'baby'
+                else if (age < 30)
+                    typeage = 'young'
+                else if (age < 70)
+                    typeage = 'adult'
+                else
+                    typeage = 'old'
+                img.setAttribute('src', `images/n4/${typeage}-${sex}.png`)
+                info.innerHTML = `<p>It's a ${sex} with ${age} years old.</p>`
+            }
+            else
+                window.alert('[Error] Input a valid age')
+        }
+    </script>
+</body>
+</html>

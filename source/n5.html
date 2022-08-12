@@ -8,32 +8,29 @@
     <style>
         body{
             font-family: Arial, Helvetica, sans-serif;
+            background-color: rgb(50, 178, 178);
         }
         header {
             color: white;
+            font-size: 30px;
             text-align: center;
             margin-top: 50px;
             margin-bottom: 40px;
         }
         main {
             padding-top: 25px;
+            padding-left: 25px;
+            padding-bottom: 15px;
             background-color: white;
             border-radius: 15px;
             width: 700px;
-            height: 450px;
             margin-left: auto;
             margin-right: auto;
         }
-        div#info > p {
-            font-size: 30px;
-            text-align: center;
+        div{
+            font-size: 20px;
             color:black;
-        }
-        div#divimg {
-            width: 300px;
-            margin-left: auto;
-            margin-right: auto;
-            margin-bottom: 0px;
+            margin: 15px;
         }
         p {
             text-align: center;
@@ -43,21 +40,39 @@
 </head>
 <body>
     <header>
-        <h1>Hour of the day</h1>
+        <h1>Counter</h1>
     </header>
     <main>
-        <div id="info">
-            <p>Take your time...</p>
+        <div>
+            Start:<input type="number" name="first" id="start">
         </div>
-        <div id="divimg">
-            <img id="image" src="images/morning.png" alt="Time">
+        <div>
+            Count:<input type="number" name="count" id="cont">
+        </div>
+        <div>
+            Finish:<input type="number" name="last" id="finish">
+        </div>
+        <div>
+            <input type="button" name="check" value="Check" onclick="clic()">
+        </div>
+        <div id="result">
+            Result
         </div>
     </main>
     <footer>
         <p>ⒸSermio21</p>
     </footer>
     <script>
-        
+        function clic(){
+            var s = document.getElementById('start')
+            var c = document.getElementById('cont')
+            var f = document.getElementById('finish')
+            var result = document.getElementById('result')
+            result.innerHTML = `${s.value}`
+            for (i = Number(s.value)+Number(c.value); i < Number(f.value); i+= Number(c.value))
+                result.innerHTML += `👉${i}`
+            result.innerHTML += '👉🏁'
+        }
     </script>
 </body>
 </html>

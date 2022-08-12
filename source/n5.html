@@ -63,15 +63,19 @@
         <p>ⒸSermio21</p>
     </footer>
     <script>
-        function clic(){
+        function clic(){ 
             var s = document.getElementById('start')
             var c = document.getElementById('cont')
             var f = document.getElementById('finish')
             var result = document.getElementById('result')
-            result.innerHTML = `${s.value}`
-            for (i = Number(s.value)+Number(c.value); i < Number(f.value); i+= Number(c.value))
-                result.innerHTML += `👉${i}`
-            result.innerHTML += '👉🏁'
+            if (Number(c.value) != 0 && Number(s.value) < Number(f.value)) {
+                result.innerHTML = `${s.value}`
+                for (i = Number(s.value)+Number(c.value); i < Number(f.value); i+= Number(c.value))
+                    result.innerHTML += `👉${i}`
+                result.innerHTML += '👉🏁'
+            }
+            else
+                result.innerHTML = 'Cannot count'
         }
     </script>
 </body>

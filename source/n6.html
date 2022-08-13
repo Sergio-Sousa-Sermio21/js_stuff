@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hour</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: rgb(50, 178, 178);
+        }
+        header {
+            color: white;
+            font-size: 30px;
+            text-align: center;
+            margin-top: 50px;
+            margin-bottom: 40px;
+        }
+        main {
+            padding-top: 25px;
+            padding-left: 25px;
+            padding-bottom: 15px;
+            background-color: white;
+            border-radius: 15px;
+            width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        div{
+            font-size: 20px;
+            color:black;
+            margin: 15px;
+        }
+        p {
+            text-align: center;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Multiplication Table</h1>
+    </header>
+    <main>
+        <div>
+            Number:<input type="number" name="number" id="main_n">
+        </div>
+        <div>
+            <input type="button" name="check" value="Check" onclick="clic()">
+        </div>
+        <div>
+            <select name="mainmul" id="result" size="10"></select>
+        </div>
+    </main>
+    <footer>
+        <p>ⒸSermio21</p>
+    </footer>
+    <script>
+        function clic(){
+            var s = document.getElementById('main_n')
+            var result = document.getElementById('result')
+            result.innerHTML = ''
+            if (s.value.length != 0) {
+                for (i = 0; i <= 10; i++)
+                    result.innerHTML += `<option value="v${i+1}">${s.value} x ${i} = ${Number(s.value) * i}</option>`
+            }
+            else
+                window.alert('Input a number.')
+        }
+    </script>
+</body>
+</html>

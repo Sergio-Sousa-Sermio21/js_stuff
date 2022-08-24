@@ -72,16 +72,27 @@
                 result += Number(sn[i]);
             return result;
         }
+        function isNumber(n){
+            if (Number(n)>=0 && Number(n)<=100)
+                return true
+            return false
+        }
+        function inArray(n){
+            for (i=0; i<sn.length; i++)
+                if (n == sn[i])
+                    return true
+            return false
+        }
         function put(){
             var s = document.getElementById('main_n')
             var add = document.getElementById('add')
             r.innerHTML = ''
-            if (s.value.length != 0) {
+            if (s.value.length != 0 && isNumber(s.value) && !inArray(s.value)) {
                 add.innerHTML += `<option value="v${n+1}">Number ${s.value} was added.</option>`
                 sn[n++] = s.value
             }
             else
-                window.alert('Input a number.')
+                window.alert("Input a number between 0 and 100 and that isn't in the.")
         }
         function clicarray(){
             if (sn.length != 0) {
